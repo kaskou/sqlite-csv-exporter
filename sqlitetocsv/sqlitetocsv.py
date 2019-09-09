@@ -34,9 +34,9 @@ class exporttoCSV:
         try:
             os.mkdir(self.db_path)
         except OSError:
-            logging.info("Creation of the directory %s failed" % path)
+            logging.info("Creation of the directory %s failed" % self.db_path)
         else:
-            logging.info("Successfully created the directory %s " % path)
+            logging.info("Successfully created the directory %s " % self.db_path)
         file_name = self.db_path/filename + '.csv'
         df_data.to_csv(file_name, encoding='utf-8', index=False)
 
