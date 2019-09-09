@@ -1,6 +1,7 @@
 import sqlite3
 import pandas as pd
-
+import os
+import logging
 
 class exporttoCSV:
 
@@ -30,7 +31,13 @@ class exporttoCSV:
 
     def csvwriter(self, df_data, filename):
         # writes the pandas data frame to csv file
-        file_name = filename + '.csv'
+        try:
+            os.mkdir(self.db_path)
+        except OSError:
+            logging.info("Creation of the directory %s failed" % path)
+        else:
+            logging.info("Successfully created the directory %s " % path)
+        file_name = self.db_path/filename + '.csv'
         df_data.to_csv(file_name, encoding='utf-8', index=False)
 
     def alltables(self):
