@@ -31,13 +31,14 @@ class exporttoCSV:
 
     def csvwriter(self, df_data, filename):
         # writes the pandas data frame to csv file
+        folder_name=self.path.strip('.db')
         try:
-            os.mkdir(self.path)
+            os.mkdir(folder_name)
         except OSError:
-            logging.info("Creation of the directory %s failed" % self.path)
+            logging.info("Creation of the directory %s failed" % folder_name)
         else:
-            logging.info("Successfully created the directory %s " % self.path)
-        file_name = self.db_path/filename + '.csv'
+            logging.info("Successfully created the directory %s " % folder_name)
+        file_name = folder_name/filename + '.csv'
         df_data.to_csv(file_name, encoding='utf-8', index=False)
 
     def alltables(self):
