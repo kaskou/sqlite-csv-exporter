@@ -36,9 +36,8 @@ class exporttoCSV:
             os.mkdir(folder_name)
         except OSError:
             logging.info("Creation of the directory %s failed" % folder_name)
-        else:
-            logging.info("Successfully created the directory %s " % folder_name)
-        file_name = folder_name/filename + '.csv'
+        logging.info("Successfully created the directory %s " % folder_name)
+        file_name = folder_name + '/' + filename + '.csv'
         df_data.to_csv(file_name, encoding='utf-8', index=False)
 
     def alltables(self):
