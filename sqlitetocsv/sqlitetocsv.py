@@ -32,11 +32,11 @@ class exporttoCSV:
     def csvwriter(self, df_data, filename):
         # writes the pandas data frame to csv file
         try:
-            os.mkdir(self.db_path)
+            os.mkdir(self.path)
         except OSError:
-            logging.info("Creation of the directory %s failed" % self.db_path)
+            logging.info("Creation of the directory %s failed" % self.path)
         else:
-            logging.info("Successfully created the directory %s " % self.db_path)
+            logging.info("Successfully created the directory %s " % self.path)
         file_name = self.db_path/filename + '.csv'
         df_data.to_csv(file_name, encoding='utf-8', index=False)
 
