@@ -1,4 +1,4 @@
-# CSV exporter form sqlite db
+# CSV exporter from sqlite db
  A Python package for exporting sqlite.db to set of csv files.
 * Install the package
     ```
