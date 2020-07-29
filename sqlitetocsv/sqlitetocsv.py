@@ -2,6 +2,7 @@ import sqlite3
 import pandas as pd
 import os
 import logging
+import csv
 
 class exporttoCSV:
 
@@ -38,7 +39,7 @@ class exporttoCSV:
             logging.info("Creation of the directory %s failed" % folder_name)
         logging.info("Successfully created the directory %s " % folder_name)
         file_name = folder_name + '/' + filename + '.csv'
-        df_data.to_csv(file_name, encoding='utf-8', index=False)
+        df_data.to_csv(file_name, quoting=csv.QUOTE_MINIMAL, encoding='utf-8', index=False)
 
     def alltables(self):
         # Export all the tables information to the csv files
