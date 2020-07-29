@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sqllitetocsv',
-    version='1.1.3',
+    version='1.1.4',
     description='To export sqlite db tables information to the csv files',
     url='git@github.com:MullionGroup/flintpro-celery-package.git',
     author='MullionGroup',
